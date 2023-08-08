@@ -1,0 +1,19 @@
+package tal;
+
+public class Bucket {
+	int bucket;
+	
+	Bucket(){
+		System.out.println("bucket 생성자");
+	}
+
+	public int getBucket() {
+		return bucket;
+	}
+
+	public void setBucket(int bucket) {
+		this.bucket = bucket;
+	}
+	
+	
+}

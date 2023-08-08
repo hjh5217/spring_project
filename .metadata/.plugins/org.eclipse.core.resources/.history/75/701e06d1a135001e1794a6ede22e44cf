@@ -1,0 +1,29 @@
+package tal.main;
+
+import tal.Bicycle;
+import tal.Bucket;
+import tal.Handle;
+
+public class Tal_main {
+
+	public static void main(String[] args) {
+		Bicycle threeWheel = new Bicycle();
+		Bicycle pocari = new Bicycle();
+		Bicycle MTB = new Bicycle();
+		
+		Handle yesHandle = new Handle();
+		Handle noHandle = new Handle();
+		
+		Bucket yesBucket = new Bucket();
+		Bucket noBucket = new Bucket();
+		
+		yesHandle.setHandleExist("핸들 있음");
+		noHandle.setHandleExist("핸들 없음");
+		
+		yesBucket.setBucketExist("바구니 있음");
+		noBucket.setBucketExist("바구니 없음");
+		
+		
+	}
+
+}

@@ -1,0 +1,6 @@
+package tal;
+
+public class Handle {
+	String name;
+	String haveHandle;
+}

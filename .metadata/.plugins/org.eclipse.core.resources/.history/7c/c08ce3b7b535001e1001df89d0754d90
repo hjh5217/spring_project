@@ -1,0 +1,5 @@
+package tal;
+
+public interface doing {
+
+}

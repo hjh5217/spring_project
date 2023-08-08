@@ -1,0 +1,10 @@
+package di_p;
+
+public class Camera {
+		String name;
+		int pixel;
+		@Override
+		public String toString() {
+			return "Camera [name=" + name + ", pixel=" + pixel + "]";
+		}
+}

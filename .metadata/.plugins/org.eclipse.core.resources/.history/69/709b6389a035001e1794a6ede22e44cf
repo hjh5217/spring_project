@@ -1,0 +1,7 @@
+package tal;
+
+public class Bicycle {
+	int wheel;
+	String handle;
+	String bucket;
+}

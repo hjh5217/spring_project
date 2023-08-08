@@ -1,0 +1,67 @@
+package tal;
+
+public class Bicycle {
+	
+	Wheel wheel1;
+	Wheel wheel2;
+	Wheel wheel3;
+	Handle handle;
+	Bucket bucket;
+	String space=", ";
+	
+	public Bicycle(){
+		
+	}
+
+	@Override
+	public String toString() {
+		if(bucket.getBucketExist()=="") {
+			space = "";
+		}
+		return (wheel1 + wheel2 + wheel3) + ", " + handle + space + bucket ;
+	}
+
+	
+	
+
+
+	public Wheel getWheel1() {
+		return wheel1;
+	}
+
+	public void setWheel1(Wheel wheel1) {
+		this.wheel1 = wheel1;
+	}
+
+	public Wheel getWheel2() {
+		return wheel2;
+	}
+
+	public void setWheel2(Wheel wheel2) {
+		this.wheel2 = wheel2;
+	}
+
+	public Wheel getWheel3() {
+		return wheel3;
+	}
+
+	public void setWheel3(Wheel wheel3) {
+		this.wheel3 = wheel3;
+	}
+
+	public Handle getHandle() {
+		return handle;
+	}
+	public void setHandle(Handle handle) {
+		
+		this.handle = handle;
+	}
+	public Bucket getBucket() {
+		return bucket;
+	}
+	public void setBucket(Bucket bucket) {
+		
+		this.bucket = bucket;
+	}
+	
+}

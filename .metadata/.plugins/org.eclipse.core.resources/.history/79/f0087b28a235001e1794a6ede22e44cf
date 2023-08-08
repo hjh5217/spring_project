@@ -1,0 +1,19 @@
+package tal;
+
+public class Bucket {
+	String name = "바구니";
+	String bucketExist;	
+	
+	public Bucket(){
+		System.out.println("bucket 생성자");
+	}
+
+	public String getBucketExist() {
+		return bucketExist;
+	}
+
+	public void setBucketExist(String bucketExist) {
+		this.bucketExist = bucketExist;
+	}
+	
+}

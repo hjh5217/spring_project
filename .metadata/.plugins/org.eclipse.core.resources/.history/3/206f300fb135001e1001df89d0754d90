@@ -1,0 +1,47 @@
+package tal;
+
+public class Bicycle {
+	Wheel wheel;
+	Handle handle;
+	Bucket bucket;
+	
+	public Bicycle(){
+		System.out.println("Bicycle 생성자");
+	}
+	
+	
+	@Override
+	public String toString() {
+		if(bucket.getBucketExist()==null) {
+			this.bucket.setBucketExist("");
+		}
+		return wheel + ", " + handle + ", " + bucket ;
+	}
+
+	
+	public Wheel getWheel() {
+		return wheel;
+	}
+
+
+	public void setWheel(Wheel wheel) {
+		this.wheel = wheel;
+	}
+
+
+	public Handle getHandle() {
+		return handle;
+	}
+	public void setHandle(Handle handle) {
+		System.out.println("핸들 생성:" + handle);
+		this.handle = handle;
+	}
+	public Bucket getBucket() {
+		return bucket;
+	}
+	public void setBucket(Bucket bucket) {
+		System.out.println("바구니 생성:" + bucket);
+		this.bucket = bucket;
+	}
+	
+}

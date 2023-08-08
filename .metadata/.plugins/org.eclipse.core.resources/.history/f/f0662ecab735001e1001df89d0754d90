@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd" >
+
+	<bean class="tal.Bicycle" name="threeCycle">
+		<property name="wheel">
+			<ref bean="threeWheel"/>
+		</property>
+		<property name="handle">
+			<ref bean="handle"/>
+		</property>
+		<property name="bucket">
+			<ref bean="noBucket"/>
+		</property>
+	</bean>
+	
+	<bean class="tal.Bicycle" name="pocari">
+		<property name="wheel">
+			<ref bean="twoWheel"/>
+		</property>
+		<property name="handle">
+			<ref bean="handle"/>
+		</property>
+		<property name="bucket">
+			<ref bean="yesBucket"/>
+		</property>
+	</bean>
+	
+	<bean class="tal.Bicycle" name="MTB">
+		<property name="wheel">
+			<ref bean="twoWheel"/>
+		</property>
+		<property name="handle">
+			<ref bean="handle"/>
+		</property>
+		<property name="bucket">
+			<ref bean="noBucket"/>
+		</property>
+	</bean>
+	
+	<bean class="tal.Wheel" name="oneWheel">
+		<property name="wheelEa" value="1"></property>
+	</bean>
+	<bean class="tal.Wheel" name="twoWheel">
+		<property name="wheelEa" value="2"></property>
+	</bean>
+	<bean class="tal.Wheel" name="threeWheel">
+		<property name="wheelEa" value="3"></property>
+	</bean>
+	<bean class="tal.Bucket" name="yesBucket">
+		<property name="bucketExist" value="바구니있음"></property>
+	</bean>
+	<bean class="tal.Bucket" name="noBucket">
+		<property name="bucketExist" value=""></property>
+	</bean>
+	<bean class="tal.Handle" name="handle">
+		<property name="handleExist" value="핸들있음"></property>
+	</bean>
+</beans>

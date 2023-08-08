@@ -1,0 +1,25 @@
+package tal;
+
+public class Handle {
+	String name = "핸들";
+	String handleExist;
+
+	Handle(){
+		System.out.println("Handle 생성자");
+	}
+	
+	public int getHandle() {
+		return handle;
+	}
+
+	public void setHandle(int handle) {
+		this.handle = handle;
+	}
+
+	@Override
+	public String toString() {
+		return "Handle [handle=" + handle + "]";
+	}
+	
+	
+}
