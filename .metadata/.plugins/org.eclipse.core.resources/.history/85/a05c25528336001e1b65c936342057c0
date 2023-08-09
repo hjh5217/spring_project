@@ -1,0 +1,13 @@
+package di_p.main;
+
+public class myClass {
+	StuColl [] myClass;
+
+	public StuColl[] getMyClass() {
+		return myClass;
+	}
+
+	public void setMyClass(StuColl... myClass) {
+		this.myClass = myClass;
+	}
+}

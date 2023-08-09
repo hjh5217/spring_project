@@ -1,0 +1,29 @@
+package di_p.main;
+
+import java.util.Arrays;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Student_main {
+
+	public static void main(String[] args) {
+		
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("di_xml/student.xml");
+		
+		STUCALL[] class1 = new STUCALL [5];
+		
+		for(int i = 0; i<class1.length; i++) {
+			STUCALL stu = context.getBean("stu"+i,STUCALL.class);
+			stu.calc();
+			class1[i] = stu;
+		}
+		for(int i = 0; i<class1.length; i++) {
+			class1[i].rankCalc(class1);
+		}
+	
+		System.out.println(Arrays.toString(class1));
+	
+	}
+}

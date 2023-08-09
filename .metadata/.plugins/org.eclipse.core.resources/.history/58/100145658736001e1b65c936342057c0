@@ -1,0 +1,21 @@
+package di_p.main;
+
+import java.util.Arrays;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Student_main {
+
+	public static void main(String[] args) {
+		
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("di_xml/student.xml");
+		myClass my = context.getBean("myClass",myClass.class);
+		
+		System.out.println(my);
+		
+		
+	
+	}
+}

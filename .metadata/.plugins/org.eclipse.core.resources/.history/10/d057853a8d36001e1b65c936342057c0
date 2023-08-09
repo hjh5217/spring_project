@@ -1,0 +1,21 @@
+package di_p.main;
+
+public class NewStudent {
+	
+	String [] name;
+	int [] jum;
+	
+	public String[] getName() {
+		return name;
+	}
+	public void setName(String ... name) {
+		this.name = name;
+	}
+	public int[] getJum() {
+		return jum;
+	}
+	public void setJum(int ... jum) {
+		this.jum = jum;
+	}
+	
+}

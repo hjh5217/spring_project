@@ -1,0 +1,48 @@
+package di_p.main;
+
+public class NewStudent {
+	
+	String [] name;
+	int [] jum;
+	int tot,avg,rank;
+	
+	void calc() {
+		tot = 0;
+		for (int i : jum) {
+			tot += i;
+		}
+		avg = tot/jum.length;
+	}
+	
+	public int getTot() {
+		return tot;
+	}
+	public void setTot(int tot) {
+		this.tot = tot;
+	}
+	public int getAvg() {
+		return avg;
+	}
+	public void setAvg(int avg) {
+		this.avg = avg;
+	}
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	public String[] getName() {
+		return name;
+	}
+	public void setName(String ... name) {
+		this.name = name;
+	}
+	public int[] getJum() {
+		return jum;
+	}
+	public void setJum(int ... jum) {
+		this.jum = jum;
+	}
+	
+}

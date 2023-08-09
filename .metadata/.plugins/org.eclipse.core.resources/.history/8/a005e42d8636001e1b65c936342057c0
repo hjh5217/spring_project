@@ -1,0 +1,29 @@
+package di_p.main;
+
+import java.util.Arrays;
+
+public class myClass {
+	
+	StuColl [] myClass;
+	int rank;
+	
+
+	
+	/*
+	 * public void rankCalc( [] exArr) { rank = 1; for( you : exArr) { if(avg <
+	 * you.avg) { rank++; } } }
+	 */
+	
+	public StuColl[] getMyClass() {
+		return myClass;
+	}
+
+	public void setMyClass(StuColl... myClass) {
+		this.myClass = myClass;
+	}
+
+	@Override
+	public String toString() {
+		return "myClass [myClass=" + Arrays.toString(myClass) + "]";
+	}
+}

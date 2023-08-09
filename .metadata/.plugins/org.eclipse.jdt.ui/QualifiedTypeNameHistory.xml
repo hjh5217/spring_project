@@ -8,4 +8,8 @@
     <fullyQualifiedTypeName name="tal.Bicycle"/>
     <fullyQualifiedTypeName name="tal.Handle"/>
     <fullyQualifiedTypeName name="tal.Bucket"/>
+    <fullyQualifiedTypeName name="tal.ThreeBicycle"/>
+    <fullyQualifiedTypeName name="tal.Pocari"/>
+    <fullyQualifiedTypeName name="tal.MTB"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

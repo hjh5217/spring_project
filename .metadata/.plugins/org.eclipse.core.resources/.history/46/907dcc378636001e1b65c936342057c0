@@ -1,0 +1,43 @@
+package di_p.main;
+
+import java.util.Arrays;
+
+public class StuColl {
+
+	String name;
+	int [] jum;
+	int tot,avg;
+	
+	void calc() {
+		tot = 0;
+		for (int i : jum) {
+			tot += i;
+		}
+		avg = tot/jum.length;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int[] getJum() {
+		return jum;
+	}
+
+
+	public void setJum(int ... jum) {
+		this.jum = jum;
+	}
+
+	@Override
+	public String toString() {
+		return "StuColl [name=" + name + ", jum=" + Arrays.toString(jum) + ", " + "]";
+	}
+
+}

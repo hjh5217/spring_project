@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean class="di_p.main.STUCALL" name="stu">
+		<property name="stu1" ref="stu1"/>
+		<property name="stu2" ref="stu2"/>
+		<property name="stu3" ref="stu3"/>
+		<property name="stu4" ref="stu4"/>
+		<property name="stu5" ref="stu5"/>
+	</bean>
+	
+	<bean class="java.util.HashSet" name="stu1">
+		<constructor-arg>
+			<list>
+				<value>50</value>
+				<value>60</value>
+				<value>70</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean class="java.util.HashSet" name="stu2">
+		<constructor-arg>
+			<list>
+				<value>60</value>
+				<value>70</value>
+				<value>80</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean class="java.util.HashSet" name="stu3">
+		<constructor-arg>
+			<list>
+				<value>70</value>
+				<value>80</value>
+				<value>90</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean class="java.util.HashSet" name="stu4">
+		<constructor-arg>
+			<list>
+				<value>80</value>
+				<value>90</value>
+				<value>100</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean class="java.util.HashSet" name="stu5">
+		<constructor-arg>
+			<list>
+				<value>40</value>
+				<value>50</value>
+				<value>60</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
