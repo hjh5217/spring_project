@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean class="di_p.Menu" name="menu">
+		<lookup-method name="order_breakfast" bean="br"/>
+		<lookup-method name="order_lunch" bean="lun"/>
+		<lookup-method name="order_dinner" bean="din"/>
+		<lookup-method name="order_br" bean="br"/>
+		<lookup-method name="order_lun" bean="lun"/>
+		<lookup-method name="order_din" bean="din"/>
+	</bean>
+
+	
+</beans>

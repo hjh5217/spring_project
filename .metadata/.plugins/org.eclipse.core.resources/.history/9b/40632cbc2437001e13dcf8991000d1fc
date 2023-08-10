@@ -1,0 +1,17 @@
+package di_p;
+
+public class Menu {
+
+}
+
+class Breakfast{
+	
+}
+
+class Lunch{
+	
+}
+
+class Dinner{
+	
+}

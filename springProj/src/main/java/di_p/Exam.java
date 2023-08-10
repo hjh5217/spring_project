@@ -16,7 +16,6 @@ public class Exam {
 		for (Stud st : studs) {
 			st.rankCalc(studs);
 		}
-		
 	}
 	
 	public TreeSet<Stud> getSet(){

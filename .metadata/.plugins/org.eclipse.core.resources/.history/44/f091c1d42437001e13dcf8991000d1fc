@@ -1,0 +1,36 @@
+package di_p;
+
+public class Menu {
+
+}
+
+class Breakfast{
+	String name;
+
+	public Breakfast(String name) {
+		super();
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Breakfast [name=" + name + "]";
+	}
+
+}
+
+class Lunch{
+	String name;
+}
+
+class Dinner{
+	String name;
+}

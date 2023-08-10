@@ -1,0 +1,77 @@
+package di_p;
+
+public class Menu {
+
+	public Breakfast order_breakfast() {
+		return new Breakfast(String d);
+	}
+	
+}
+
+class Breakfast{
+	String name;
+
+	public Breakfast(String name) {
+		super();
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Breakfast [name=" + name + "]";
+	}
+
+}
+
+class Lunch{
+	String name;
+
+	public Lunch(String name) {
+		super();
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Lunch [name=" + name + "]";
+	}
+}
+
+class Dinner{
+	String name;
+
+	public Dinner(String name) {
+		super();
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Dinner [name=" + name + "]";
+	}
+	
+}
