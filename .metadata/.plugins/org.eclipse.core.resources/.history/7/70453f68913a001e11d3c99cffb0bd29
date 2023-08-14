@@ -1,0 +1,24 @@
+package exam;
+
+import java.util.Scanner;
+
+public class scanner {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int [] arr = {23,45,67};
+		int max = 0;
+		
+		if(arr[0]<arr[1]) {
+			max = arr[1];
+		}
+		if(arr[1]<arr[2]) {
+			max = arr[2];
+		}
+		
+		System.out.println(max);
+		
+	}
+
+}

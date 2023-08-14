@@ -1,0 +1,22 @@
+package exam;
+
+import java.util.Scanner;
+
+public class scanner {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int input = sc.nextInt();
+		
+			if(input>19) {
+				System.out.println("성인");
+				break;
+			}else {
+				System.out.println("미성년");
+				break;
+			}
+		
+	}
+
+}

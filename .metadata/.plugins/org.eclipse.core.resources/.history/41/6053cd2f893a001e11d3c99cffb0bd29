@@ -1,0 +1,10 @@
+package exam;
+
+public class exam {
+	public static void main(String[] args) {
+	
+		System.out.printf("한주훈");
+		System.out.printf("\n01052173168");
+		System.out.printf("\n서울관악구");
+	}
+}

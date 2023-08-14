@@ -1,0 +1,15 @@
+package anno_p.com.sub2;
+
+@Component
+public class Monitor {
+
+	String name = "샘숭모니터";
+	int size = 22;
+	
+	@Override
+	public String toString() {
+		return "Monitor [name=" + name + ", size=" + size + "]";
+	}
+	
+	
+}

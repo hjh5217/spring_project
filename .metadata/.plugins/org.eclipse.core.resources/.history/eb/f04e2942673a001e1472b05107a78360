@@ -1,0 +1,5 @@
+package test.coffee;
+
+public class CoffeeType {
+
+}
