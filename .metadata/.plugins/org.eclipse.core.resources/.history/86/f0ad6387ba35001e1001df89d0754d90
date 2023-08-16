@@ -1,8 +1,0 @@
-package tal;
-
-public class Wheel {
-	int wheel = 1;
-
-	
-
-}

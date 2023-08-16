@@ -1,0 +1,17 @@
+package exam;
+
+public class tset2 {
+
+	public static void main(String[] args) {
+		int i = 0;
+		if(i%3==0) {
+			System.out.println("3의배수임");
+			
+		}else {
+			System.out.println("3의배수아닌뎅?");
+			
+		}
+
+	}
+
+}

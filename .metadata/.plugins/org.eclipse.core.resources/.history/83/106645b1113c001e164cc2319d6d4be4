@@ -1,0 +1,24 @@
+package aop_p.adv;
+
+import java.util.Arrays;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+
+import aop_p.webToon.Figure;
+import aop_p.webToon.KangFish;
+
+public class FigureAdvice {
+
+	void rectangle(JoinPoint joinPoint) {
+		System.out.println("ExecAdvice2 - oj"+joinPoint.getSignature().toShortString());
+	}
+	
+	Object figureTest(ProceedingJoinPoint joinPoint) {
+		Figure res = null;
+		
+
+		
+		return res;
+	}
+}

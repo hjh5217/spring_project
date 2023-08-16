@@ -1,5 +1,0 @@
-package tal;
-
-public interface BicycleInter {
-	void doing();
-}

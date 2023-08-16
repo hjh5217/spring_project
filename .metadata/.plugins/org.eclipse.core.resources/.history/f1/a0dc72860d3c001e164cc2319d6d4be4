@@ -1,0 +1,14 @@
+package aop_p.webToon;
+
+public class Figure {
+
+	void Rectangle(int width,int height) {
+		
+	}
+	void Triangle(int width,int height,int hypotenuse) {
+		
+	}
+	void Circle(int r) {
+		
+	}
+}

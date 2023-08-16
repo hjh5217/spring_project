@@ -1,0 +1,14 @@
+package aop_p.adv;
+
+import java.util.Arrays;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+
+import aop_p.webToon.Figure;
+import aop_p.webToon.KangFish;
+
+public class FigureAdvice {
+
+	
+}

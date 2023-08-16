@@ -1,0 +1,22 @@
+package exam;
+
+public class tset2 {
+
+	public static void main(String[] args) {
+		int i = 1;
+		
+		while(i<100) {
+			System.out.println(i);
+			if(i%3==0) {
+				
+				System.out.println("3의배수임");
+				i++;
+			}else {
+				
+				System.out.println("3의배수아닌뎅?");
+				i++;
+			}
+		}
+	}
+
+}

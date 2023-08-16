@@ -1,0 +1,21 @@
+package exam;
+
+import java.util.Random;
+
+public class tset2 {
+
+	public static void main(String[] args) {
+		int count = 0;
+		int sum = 0;
+		for (int i = 1; i <= 100; i++) {
+			if(i%2==0) {
+				sum += i;
+				if(sum>60) {
+					System.out.println("60넘어감");
+					break;
+				}
+			}
+		}
+	}
+//짝수를 더하기 했을때 60이 넘어갈때
+}

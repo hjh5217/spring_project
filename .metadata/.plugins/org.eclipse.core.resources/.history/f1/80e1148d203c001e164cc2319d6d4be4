@@ -1,0 +1,10 @@
+package exam;
+
+import java.util.Random;
+
+public class tset2 {
+
+	public static void main(String[] args) {
+		
+	}
+}

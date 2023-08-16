@@ -1,0 +1,26 @@
+package aop_p.webToon;
+
+public class KangFish {
+
+	int width;
+	int height;
+	int radius;
+	double PI = Math.PI;
+	
+	
+	
+	public KangFish(String name, int size) {
+		super();
+		this.name = name;
+		this.size = size;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "KangFish [name=" + name + ", size=" + size + "]";
+	}
+	
+	
+}

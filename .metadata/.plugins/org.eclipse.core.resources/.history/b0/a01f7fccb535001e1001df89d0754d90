@@ -1,7 +1,0 @@
-package tal;
-
-public interface doing {
-	void go();
-	void repair();
-	void fall();
-}
