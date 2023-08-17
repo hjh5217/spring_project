@@ -1,0 +1,8 @@
+package aop_p.webToon;
+
+public class BanAvg {
+
+	public void ban(int people,int ... kor,int ... eng ) {
+		System.out.println("사람수: "+people + ", 국어: ");
+	}
+}

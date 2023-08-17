@@ -1,0 +1,8 @@
+package aop_p.webToon;
+
+public class EasyMenu {
+
+	public void menu(String kind, String name, int price) {
+		
+	}
+}

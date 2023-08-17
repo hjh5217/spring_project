@@ -1,0 +1,46 @@
+package aop_p.adv;
+
+import java.util.Arrays;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+//@Component 가능은 하지만 용어의 편의상으로 Service로 주로 사용
+@Service
+@Aspect
+public class FoodAdvice {
+
+	//ProceedingJoinPoint 는 around 에서만 가능함
+	//void afterrr(ProceedingJoinPoint joinPoint) {
+	//	System.out.println("afterrr:"+joinPoint.getSignature().toShortString());
+	//}
+	
+	@Pointcut("execution(* aop_p.webToon..* (..))")
+	void pppiii() {}
+	
+	@After("pppiii()")
+	void afterrr(JoinPoint joinPoint) {
+		System.out.println("afterrr:"+joinPoint.getSignature().toShortString());
+		System.out.println(Arrays.toString(joinPoint.getArgs()));
+		System.out.println(joinPoint.getArgs()[0]);
+	}
+}
+/*
+ * 
+ * 식당 주문을 구현하세요
+ * 주문 종류에 따라 갯수를 구하세요
+ * 종류
+ * 찌개 덮밥
+ * 가격이 10000 미만인 경우 배달비를 추가하세요
+ * 종류와 배달비 계산은 aop, annotation 으로 처리
+ * 
+ * 
+ */

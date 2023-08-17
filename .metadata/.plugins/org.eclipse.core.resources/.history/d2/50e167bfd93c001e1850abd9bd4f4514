@@ -1,0 +1,30 @@
+package aop_p.main;
+
+import java.util.ArrayList;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import aop_p.model.Menu;
+import aop_p.model.Person;
+import aop_p.webToon.EasyMenu;
+import aop_p.webToon.Figure;
+import aop_p.webToon.JoSuk;
+import aop_p.webToon.KangBada;
+import aop_p.webToon.KangSan;
+
+public class FoodMain {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("aop_xml/food.xml");
+		
+		EasyMenu em = context.getBean("easyMenu",EasyMenu.class);
+		
+		ArrayList<Menu> menu = new ArrayList<>();
+		menu.add(new Menu("찌개","김치찌개",9000));
+		
+		em.menu(menu);
+	}
+
+}
