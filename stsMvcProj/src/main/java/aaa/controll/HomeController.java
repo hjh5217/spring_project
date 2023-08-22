@@ -12,19 +12,18 @@ public class HomeController {
 	String homeGo() {
 		System.out.println("홈이다");
 		//return "homehome";
-		return "home"; // views/home.html 열어.
-	}
-	
-}
-
+		return "home";  // views/home.html
+		
 /*
- * application.yaml
- * server : 
-     port : 80
-   spring :
-     thymeleaf:
-       prefix : views/
-       suffix : .html
-       cache : false
- * 
- */
+application.yaml 설정
+
+spring :
+  thymeleaf:
+    prefix : views/
+    suffix : .html
+    cache : false
+     
+ * */		
+		
+	}
+}

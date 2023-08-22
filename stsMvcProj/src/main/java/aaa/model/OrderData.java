@@ -9,13 +9,15 @@ public class OrderData {
 
 	OrderAddr ad;
 	ArrayList<OrderProduct> arr;
-	int totalPrice;
 	
-	public int getTotalPrice() {
-		for(OrderProduct tot : arr) {
-			totalPrice += tot.total;
+	int total;
+	
+	public int getTotal() {
+		total = 0;
+		for (OrderProduct op : arr) {
+			total += op.getTotal();
 		}
-		return totalPrice;
+		
+		return total;
 	}
-	
 }

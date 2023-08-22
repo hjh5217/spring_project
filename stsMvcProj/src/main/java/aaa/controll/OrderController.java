@@ -1,19 +1,16 @@
 package aaa.controll;
 
-import java.util.ArrayList;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import aaa.model.OrderData;
-import aaa.model.OrderProduct;
 
 @Controller
 @RequestMapping("request/order")
 public class OrderController {
-	
+
 	@GetMapping
 	String orderForm() {
 		return "req/orderForm";
@@ -22,8 +19,6 @@ public class OrderController {
 	@PostMapping
 	String orderReg(OrderData od) {
 		System.out.println(od);
-		
 		return "req/orderReg";
 	}
-	
 }

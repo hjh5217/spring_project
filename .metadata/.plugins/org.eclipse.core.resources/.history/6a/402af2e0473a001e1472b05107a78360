@@ -1,9 +1,0 @@
-package anno_p.com.sub1;
-
-public class CoffeeInheritance {
-
-	String beanName;
-	String water;
-	int price;
-	
-}

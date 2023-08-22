@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>request/orderReg</h1>
-<table border="">
+<table border=""
 		<tr>
 			<td>제품명</td>
 			<td>단가</td>
@@ -20,8 +20,8 @@
 			<td>[[${pd.total}]]</td>
 		</tr>
 		<tr>
-			<td colspan="3">합계</td>
-			<td colspan="1">[[${orderData.totalPrice}]]</td>
+			<td colspan="4">합계 : [[${orderData.total}]]</td>
+			
 		</tr>
 		<tr>
 			<td rowspan="3">주소</td>
@@ -29,6 +29,7 @@
 			<td colspan="2">[[${orderData.ad.zipcode}]]</td>
 		</tr>
 		<tr>
+			
 			<td>기본주소</td>
 			<td colspan="2">[[${orderData.ad.addr1}]]</td>
 		</tr>
@@ -36,6 +37,7 @@
 			<td>상세주소</td>
 			<td colspan="2">[[${orderData.ad.addr2}]]</td>
 		</tr>
+		
 	</table>
 </body>
 </html>
