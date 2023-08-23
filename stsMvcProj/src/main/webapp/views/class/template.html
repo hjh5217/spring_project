@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>class/class</title>
+</head>
+<body>
+<h1>class/class</h1>
+<table border="">
+	<!--header-->
+	<tr>
+		<td width="500px">
+			<table width="100%">
+				<tr align="center">
+					<td th:each="md : ${cNav}">
+						<a th:href="|?ban=${md.url}|" th:text="${md.txt}"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!--main-->
+	<tr th:each="mc:${mainCt}">
+		<td >
+			[[${mc}]]
+		</td>
+	</tr>
+	<!--footer-->
+	<tr>
+		<td>[[${fTxt}]]</td>
+	</tr>
+	
+</table>
+</body>
+</html>

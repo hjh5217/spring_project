@@ -44,4 +44,14 @@ public class Student implements Comparable<Student>{
 		}
 		return res;
 	}
+
+	public Student(String name, Double ... jum) {
+		super();
+		this.name = name;
+		this.jum = new ArrayList<>();
+		for(Double i : jum) {
+			this.jum.add(i);
+		}
+	}
+
 }
