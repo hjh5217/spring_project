@@ -1,43 +1,30 @@
 <!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org">
+<html xmlns="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="model/inc/total">
+
 <head>
-<meta charset="UTF-8">
-<title>model/season</title>
-<style>
-	table tr td img{
-		width: 100px;
-		height: 60px;
-		padding: 10px;
-	}
-	
-</style>
+	<meta charset="UTF-8">
+	<title>model/season</title>
+	<style>
+		table tr td img {
+			width: 300px;
+			height: 150px;
+			padding: 10px;
+		}
+	</style>
 </head>
+
 <body>
-<h1>model/season</h1>
-<table border="">
-	<!--header-->
-	<tr>
-		<td width="500px">
-			<table width="100%">
-				<tr align="center">
-					<td th:each="md : ${hNav}">
-						<a th:href="|?sn=${md.url}|" th:text="${md.txt}"/>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<!--main-->
-	<tr>
-		<td>
-			<img th:each="mc:${mainCt}" th:src="|/sn/${mc}|" alt=""/>
-		</td>
-	</tr>
-	<!--footer-->
-	<tr>
-		<td>[[${fTxt}]]</td>
-	</tr>
-	
-</table>
+
 </body>
+<th:block layout:fragment="aaa">
+	<h2>추가내용a</h2>
+</th:block>
+<th:block layout:fragment="bbb">
+	<h2>추가내용b</h2>
+</th:block>
+<th:block layout:fragment="ccc">
+	<h2>추가내용c</h2>
+</th:block>
+
 </html>

@@ -14,10 +14,10 @@ public class SeasonMain {
 	public SeasonMain() {
 		data = new HashMap<>();
 		
-		data.put("spring","sp1.jpg,sp2.jpg,sp3.jpg".split(","));
+		data.put("spring","sp1.png,sp2.png,sp3.png".split(","));
 		data.put("summer","sua.png,sub.png".split(","));
-		data.put("fall","fa_1.jpg,fa_2.jpg,fa_5.jpg,fa_6.jpg".split(","));
-		data.put("winter","ww.jpg,ee.jpg,sp1.jpg".split(","));
+		data.put("fall","fa_1.png,fa_2.png,fa_5.png,fa_6.png".split(","));
+		data.put("winter","ww.png,ee.png".split(","));
 	}
 	
 	public String [] getPicture(String title) {

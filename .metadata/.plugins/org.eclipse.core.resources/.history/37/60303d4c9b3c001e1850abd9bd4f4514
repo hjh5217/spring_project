@@ -1,8 +1,0 @@
-package aop_p.webToon;
-
-public class BanAvg {
-
-	public void ban(int people,int kor,int eng) {
-		
-	}
-}

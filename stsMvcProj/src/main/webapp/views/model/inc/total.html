@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<table border="">
+		<!--header-->
+		<tr>
+			<td width="500px">
+				<table width="100%">
+					<tr align="center">
+						<th:block th:replace="|model/inc/header|" />
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!--header끝-->
+		<!--main-->
+		<tr>
+			<td>
+				<th:block th:replace="model/inc/body" />
+			</td>
+		</tr>
+		<!--main 끝-->
+		<!--footer-->
+		<tr>
+			<td>
+				<th:block th:replace="model/inc/footer" />
+			</td>
+		</tr>
+		<!--footer끝-->
+		<tr>
+			<td colspan="2">
+				<th:block layout:fragment="aaa" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<th:block layout:fragment="bbb" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<th:block layout:fragment="ccc" />
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>
