@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>예약페이지</title>
+</head>
+<body>
+<form action="" method="post" th:object="${reservationPerson}">
+	<table border="">
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="name" th:value="*{name}"/></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="text" th:value="*{pw}" /></td>
+		</tr>
+		<tr>
+			<td>핸드폰번호</td>
+			<td><input type="text" th:value="*{tel}" /></td>
+			<td><input type="button" value="인증"></td>
+		</tr>
+		<tr>
+			<td>인증번호</td>
+			<td><input type="text"  /></td>
+			<td><input type="button" value="확인"></td>
+		</tr>
+		<tr>
+			<td>캠핑장 구역 선택</td>
+			<td>
+				<select>
+					<option th:each="ss:*{sites}" value="${ss.name}" th:text="${ss.name}"/>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>예약 기간 선택</td>
+			<td>
+				<select>
+					<option th:each="ss:*{sites}" value="${ss.period}" th:text="${ss.period}"/>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>예약 인원 선택</td>
+			<td>
+				<select>
+					<option value="4" th:text="4"/>
+				</select>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package aaa.controll;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,5 +26,12 @@ spring :
      
  * */		
 		
+	}
+	@RequestMapping("/admin/{ser}")
+	@ResponseBody
+	String adminGo(@PathVariable String ser) {
+		System.out.println("admin인데용");
+		
+		return "admin : " + ser + "페이지";  
 	}
 }
