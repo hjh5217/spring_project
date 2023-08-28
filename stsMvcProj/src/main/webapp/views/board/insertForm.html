@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>글쓰기 페이지</title>
+</head>
+<body>
+	<h2>글쓰기 페이지</h2>
+	<form method="post" enctype="multipart/form-data" th:object="${boardDTO}">
+		<table border="">
+			<tr>
+				<td>제목</td>
+				<td><input type="text" th:field="*{title}"/></td>
+			</tr>
+			<tr>
+				<td>작성자</td>
+				<td><input type="text" th:field="*{pname}"/></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="text" th:field="*{pw}"/></td>
+			</tr>
+			<tr>
+				<td>파일</td>
+				<td><input type="file" th:field="*{mmff}"/></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea th:field="*{content}" cols="30" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="4" align="right">
+					<button type="submit">글쓰기</button>
+					<button type="reset">리셋</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

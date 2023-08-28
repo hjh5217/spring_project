@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>연결테스트</title>
+</head>
+<body>
+<h2>연결테스트</h2>
+
+<table border="">
+	<tr>
+		<td>번호</td>
+		<td>제목</td>
+		<td>작성자</td>
+		<td>등록일</td>
+		<td>조회수</td>
+	</tr>
+	<tr th:each="dto, dtoStat : ${mainData}">
+		<td th:text="${dtoStat.count}"></td>
+		<td>
+			<a th:href="|detail/${dto.id}|" th:text="${dto.title}"></a>
+		</td>
+		<td th:text="${dto.pname}"></td>
+		<td th:text="${dto.reg_date}"></td>
+		<td th:text="${dto.cnt}"></td>
+	</tr>
+	<tr>
+		<td colspan="5" align="right">
+			<a th:href="insert" th:text="글쓰기" />
+		</td>
+	</tr>
+</table>
+</body>
+</html>

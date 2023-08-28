@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "mybatis.configration.map-underscore-to-camel-case",
+  "type": "java.lang.String",
+  "description": "A description for 'mybatis.configration.map-underscore-to-camel-case'"
+}]}
