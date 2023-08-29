@@ -6,8 +6,7 @@
 </head>
 <body>
 <h2>연결테스트</h2>
-
-<table border="">
+<table border="" width="1000px">
 	<tr>
 		<td>번호</td>
 		<td>제목</td>
@@ -16,17 +15,37 @@
 		<td>조회수</td>
 	</tr>
 	<tr th:each="dto, dtoStat : ${mainData}">
-		<td th:text="${dtoStat.count}"></td>
+		<td th:text="${pd.total - pd.start - dtoStat.count + 1}"></td>
 		<td>
-			<a th:href="|detail/${dto.id}|" th:text="${dto.title}"></a>
+			<th:block th:if="${dto.lev>0}" th:each="no : ${#numbers.sequence(0,dto.lev)}">&nbsp;</th:block>
+			<th:block th:if="${dto.lev} > 0" >└</th:block>
+			<a th:href="|detail/${dto.id}?page=${pd.page}|" th:text="${dto.title}"></a>
 		</td>
 		<td th:text="${dto.pname}"></td>
-		<td th:text="${dto.reg_date}"></td>
+		<td th:text="${dto.reg_dateStr}"></td>
 		<td th:text="${dto.cnt}"></td>
 	</tr>
 	<tr>
+		<td colspan="5" align="center">
+			<th:block th:if="${pd.pageStart} > 1">
+				<a th:href="|?page=${pd.pageStart-1}|" th:text="[이전]"/>
+			</th:block>
+			<th:block th:each="num : ${#numbers.sequence(pd.pageStart,pd.pageEnd)} ">		
+				<b th:if="${num} == ${pd.page}">
+					<a th:href="|?page=${num}|" th:text="${num}"/>
+				</b>
+				<th:block th:unless="${num} == ${pd.page}">
+					<a th:href="|?page=${num}|" th:text="${num}"/>
+				</th:block>
+			</th:block>
+			<th:block th:if="${pd.pageEnd} < ${pd.pageTotal}">
+				<a th:href="|?page=${pd.pageEnd+1}|" th:text="[다음]"/>
+			</th:block>
+		</td>
+	</tr>
+	<tr>
 		<td colspan="5" align="right">
-			<a th:href="insert" th:text="글쓰기" />
+			<a th:href="|insert?page=${pd.page}|" th:text="글쓰기" />
 		</td>
 	</tr>
 </table>

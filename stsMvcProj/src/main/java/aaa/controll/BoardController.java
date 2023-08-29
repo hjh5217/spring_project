@@ -28,32 +28,33 @@ public class BoardController {
 	BoardMapper mapper;
 
 	@RequestMapping("list")
-	String list(Model mm) {
-		List<BoardDTO> data = mapper.list();
-		// System.out.println(data);
+	String list(Model mm, PageData pd) {
+		pd.calc(mapper.totalCnt());
+		System.out.println(pd);
+		List<BoardDTO> data = mapper.list(pd);
+		mm.addAttribute("pd", pd);
 		mm.addAttribute("mainData", data);
 		return "board/list";
 	}
 
 	@RequestMapping("detail/{id}")
-	String detail(Model mm, @PathVariable int id) {
+	String detail(Model mm, @PathVariable int id, @RequestParam("page") int page) {
 		mapper.addcnt(id);
-//		System.out.println(mapper.detail(id).getUpfile());
+		//System.out.println(mapper.detail(id).getUpfile());
 		String upFile = mapper.detail(id).getUpfile();
-		
 		if(upFile == null || upFile.equals("")) {
 			mm.addAttribute("fileName", mapper.detail(id).getUpfile());
-			mm.addAttribute("dto", mapper.detail(id));
-		}else {
-			mm.addAttribute("dto", mapper.detail(id));
 		}
-	
+		System.out.println("detail아 페이지 있니? : "+page);
+		mm.addAttribute("dto", mapper.detail(id));
+		mm.addAttribute("page",page);
 		return "board/detail";
 	}
 
 	@GetMapping("insert")
-	String insert(BoardDTO dto) {
-
+	String insert(BoardDTO dto, @RequestParam("page") int page, Model mm) {
+		System.out.println("insert야 페이지 있니? : "+page);
+		mm.addAttribute("page", page);
 		return "board/insertForm";
 	}
 
@@ -65,7 +66,9 @@ public class BoardController {
 		fileSave(dto.getMmff());
 		// 파일이름 db에 저장
 		dto.setUpfile(dto.getMmff().getOriginalFilename());
-		// 글 추가
+		System.out.println(mapper.getMaxId());
+		dto.setGid(mapper.getMaxId()+1);
+		System.out.println(dto);
 		mapper.insert(dto);
 
 		pd.setMsg("등록되었습니다.");
@@ -73,21 +76,29 @@ public class BoardController {
 
 		return "board/alert";
 	}
+	
+	@GetMapping("reply")
+	String reply(BoardDTO dto, Model mm, @RequestParam("page") int page, @RequestParam("gid") int gid, @RequestParam("id") int id ) {
+		System.out.println("reply야 페이지 있니? : "+page);
+		mm.addAttribute("page", page);
+		mm.addAttribute("gid", gid);
+		mm.addAttribute("id", id);
+		return "board/replyForm";
+	}
 
 	@GetMapping("delete/{id}")
-	String delete(BoardDTO dto, @PathVariable int id) {
+	String delete(BoardDTO dto, @PathVariable int id, @RequestParam("page") int page, Model mm) {
 		// System.out.println(id);
-
 		dto.setId(id);
+		System.out.println("delete야 페이지 있니? : "+page);
+		mm.addAttribute("page",page);
 		return "board/deleteForm";
 	}
 
 	@PostMapping("delete/{id}")
 	String deleteReg(BoardDTO dto, PageData pd, Model mm) {
-
 		pd.setMsg("삭제실패");
 		pd.setGoUrl("/board/delete/" + dto.getId());
-
 		int cnt = mapper.delete(dto);
 		System.out.println("deleteReg:" + cnt);
 
@@ -100,8 +111,10 @@ public class BoardController {
 	}
 
 	@GetMapping("modify/{id}")
-	String delete(Model mm, @PathVariable int id) {
+	String delete(Model mm, @PathVariable int id, @RequestParam("page") int page) {
+		System.out.println("modify야 페이지 있니? : "+page);
 		mm.addAttribute("dto", mapper.detail(id));
+		mm.addAttribute("page",page);
 		return "board/modifyForm";
 	}
 
@@ -137,6 +150,5 @@ public class BoardController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }

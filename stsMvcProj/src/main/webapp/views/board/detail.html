@@ -37,17 +37,17 @@
 			<td>내용</td>
 			<td th:text="${dto.content}"></td>
 		</tr>
-		<tr th:if="${dto.upfile} != null">
+		<tr th:if="${dto.upfile} != null and ${dto.upfile} != ''">
 			<td>이미지</td>
 			<td><img th:src="|/up/${dto.upfile}|" alt="img" /></td>
 		</tr>
 		<tr>
 			<td colspan="4" align="right">
-				<a href="/board/list" th:text="목록"></a>
-				<a th:href="|/board/modify/${dto.id}|" th:text="수정"></a>
-				<a th:href="|/board/delete/${dto.id}|" th:text="삭제"></a>
+				<a th:href="|/board/list?page=${page}|" th:text="목록"></a>
+				<a th:href="|/board/modify/${dto.id}?page=${page}|" th:text="수정"></a>
+				<a th:href="|/board/delete/${dto.id}?page=${page}|" th:text="삭제"></a>
+				<a th:href="|/board/reply?id=${dto.id}&gid=${dto.gid}&page=${page}|" th:text="댓글쓰기"></a>
 			</td>
-
 		</tr>
 	</table>
 </body>

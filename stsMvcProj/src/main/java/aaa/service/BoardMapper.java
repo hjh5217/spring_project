@@ -5,11 +5,12 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import aaa.model.BoardDTO;
+import aaa.model.PageData;
 
 @Mapper
 public interface BoardMapper {
 
-	List<BoardDTO> list();
+	List<BoardDTO> list(PageData pd);
 	
 	BoardDTO detail(int id);
 	
@@ -22,4 +23,6 @@ public interface BoardMapper {
 	void addcnt(int id);
 
 	int totalCnt();
+	
+	int getMaxId();
 }
