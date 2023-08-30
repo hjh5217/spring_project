@@ -25,4 +25,9 @@ public interface BoardMapper {
 	int totalCnt();
 	
 	int getMaxId();
+	
+	int idPwChk(BoardDTO dto);
+	
+	void fileDelete(BoardDTO dto);
+	
 }

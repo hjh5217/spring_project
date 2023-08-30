@@ -5,8 +5,16 @@
 	<title>수정 페이지</title>
 </head>
 <body>
+<script th:inline="javascript">
+	function fileDel(){			
+		modiForm.action=/board/fileDelete;
+		modiForm.submit()
+	}
+</script>
+[[${page}]]
+[[${dto.id}]]
 	<h2>수정 페이지</h2>
-	<form method="post" enctype="multipart/form-data" th:object="${dto}">
+	<form name="modiForm" method="post" enctype="multipart/form-data" th:object="${dto}">
 		<input type="hidden" th:field="*{id}"/>
 		<table border="">
 			<tr>
@@ -21,10 +29,13 @@
 				<td>비밀번호</td>
 				<td><input type="text" name="pw"/></td>
 			</tr>
+			<th:block th:if="${dto.seq} == 0">
 			<tr>
 				<td>파일</td>
-				<td><input type="file" th:field="*{mmff}"/></td>
+				<td th:if="${dto.upfile == null or dto.upfile == ''}"><input type="file" th:field="*{mmff}"/></td>
+				<td th:unless="${dto.upfile == null or dto.upfile == ''}">[[${dto.upfile}]]<input type="button" value="파일삭제" onclick="fileDel()"/></td>
 			</tr>
+			</th:block>
 			<tr>
 				<td>내용</td>
 				<td><textarea th:field="*{content}" cols="30" rows="10"></textarea></td>

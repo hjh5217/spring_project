@@ -21,6 +21,10 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 		select max(id) from board;
 	</select>
 	
+	<select id="idPwChk" resultType="Integer" parameterType="Integer">
+		select * from board where id = #{id} and pw = #{pw}
+	</select>
+	
 	<insert id="insert" parameterType="bDTO">
 		insert into board (title, pname, pw, upfile, content, reg_date, cnt, seq, lev , gid)
 		values
@@ -29,6 +33,10 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 	
 	<delete id="delete" parameterType="bDTO">
 		delete from board where id = #{id} and pw = #{pw}
+	</delete>
+	
+	<delete id="fileDelete" parameterType="bDTO">
+		update board set upfile = null where id = #{id} and pw = #{pw}
 	</delete>
 	
 	<update id="update" parameterType="bDTO">

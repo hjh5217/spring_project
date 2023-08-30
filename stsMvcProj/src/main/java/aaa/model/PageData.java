@@ -7,7 +7,7 @@ public class PageData {
 	
 	String msg, goUrl;
 	
-	public int page = 1;
+	public int page;
 	public int limit = 10;
 	public int pageLimit = 5;
 	public int start, pageStart, pageEnd, total, pageTotal;

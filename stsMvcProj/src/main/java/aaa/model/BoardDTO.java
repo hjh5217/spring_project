@@ -18,6 +18,8 @@ public class BoardDTO {
 	Date reg_date;
 	// gid 는 소속 , seq 는 댓글 단계 , lev 는 댓글 앞에 칸 추가
 
+	String grade;
+	
 	MultipartFile mmff;
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd (E) HH:mm");
 
