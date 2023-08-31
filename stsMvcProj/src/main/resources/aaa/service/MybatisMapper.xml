@@ -8,9 +8,8 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 	<select id="list" resultType="bDTO">
 		select * from board order by gid desc, seq
 	</select>
-	
-	<select id="listSch" resultType="bDTO" parameterType="bDTO">
-		select * from board
+
+	<sql id="wh_1">
 		<where>
 			<if test="title!=null"> 
 			title like concat('%',#{title},'%')
@@ -19,6 +18,11 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 			and pname like concat('%',#{pname},'%')
 			</if>
 		</where>
+	</sql>
+
+	<select id="listSch" resultType="bDTO" parameterType="bDTO">
+		select * from board
+		<include refid="wh_1"/>
 	</select>
 	
 	<select id="cntSch" resultType="bDTO" parameterType="bDTO">
@@ -40,43 +44,57 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 		</where>
 	</select>
 	
-	<select id="listCnt" resultType="bDTO">
-		select * from board order by gid desc, seq
-	</select>
+	<sql id="max_1">
+		(select max(id) + 1 from board bb) 
+	</sql>
 
-	<select id="detail" resultType="bDTO" parameterType="Integer">
-		select * from board where id = #{id}
-	</select>
+	<insert id="insertttList" parameterType="java.util.List">
+		insert into board (title, pname, pw, content, reg_date, cnt, seq, lev,id,gid)
+		values
+		<foreach collection="list" item="dto" separator=" , " index="i">
+			(#{dto.title}, #{dto.pname}, #{dto.pw}, #{dto.content}, sysdate(), 0, 0, 0,
+			<include refid="max_1"/> ,<include refid="max_1"/>)
+		</foreach>
+	</insert>
 	
-	<select id="totalCnt" resultType="Integer">
-		select count(*) from board
-	</select>
+	<insert id="inserttt" parameterType="bDTO">
+		<selectKey keyProperty="id" resultType="Integer" order="BEFORE">
+			select max(id)+1 from board
+		</selectKey>
 	
-	<select id="getMaxId" resultType="Integer">
-		select max(id) from board;
-	</select>
+		insert into board (title, pname, pw, upfile, content, reg_date, cnt, seq, lev , gid)
+		values
+		(#{title}, #{pname}, #{pw}, #{upfile}, #{content}, sysdate(), 0, 0, 0, #{id})
+	</insert>
 	
-	<select id="idPwChk" resultType="Integer">
-		select * from board where id = #{id} and pw = #{pw}
-	</select>
-	
+	<insert id="insertDTOs" parameterType="dtos">
+		insert into board (title, pname, pw, content, reg_date, cnt, seq, lev)
+		values
+		<foreach collection="arr" item="dd" separator=" , ">
+			(#{dd.title}, #{dd.pname}, #{dd.pw}, #{ct}, sysdate(), #{no}, 0, 0)
+		</foreach>
+	</insert>
+
+
 	<insert id="insert" parameterType="bDTO">
 		insert into board (title, pname, pw, upfile, content, reg_date, cnt, seq, lev , gid)
 		values
 		(#{title}, #{pname}, #{pw}, #{upfile}, #{content}, sysdate(), 0, 0, 0, #{gid})
 	</insert>
 	
-	<delete id="delete" parameterType="bDTO">
+	
+	<!-- 여러개의 매개변수를 처리시 xml에서는 매개변수 이름으로 접근 id,pw -->
+	<delete id="delete">
 		delete from board where id = #{id} and pw = #{pw}
 	</delete>
 	
 	<delete id="fileDelete" parameterType="bDTO">
 		update board set upfile = null where id = #{id} and pw = #{pw}
 	</delete>
-	
-	<update id="update" parameterType="bDTO">
+	<!-- parameterTyp=map 인 경우 매개변수를 map으로 묶어 key,value 형태로 접근 -->
+	<update id="update" parameterType="map">
 		update board 
-		set pname = #{pname}, content = #{content}, title = #{title}, upfile = #{upfile}
+		set pname = #{pname}, content = #{content}, title = #{title}
 		where id = #{id} and pw = #{pw}
 	</update>
 	

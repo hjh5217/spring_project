@@ -148,7 +148,7 @@ public class BoardController {
 		pd.setMsg("파일삭제 실패");
 		pd.setGoUrl("/board/modify/" + dto.getId() + "?page=" + pd.page);
 
-		int cnt = mapper.idPwChk();
+		int cnt = mapper.idPwChk(dto);
 		System.out.println("BFileDelete:" + cnt);
 
 		if (cnt > 0) {
